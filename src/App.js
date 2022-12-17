@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Loginpg from './page/login';
+
+import Homepg from './page/homepg';
+import Profile from './page/profile';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Signpg from './page/signup';
+import Aboutpg from './page/about';
+import Services from './page/services';
+import Contact from './page/contact'
+import Vetslog from './page/vetslogin';
+import Vetsdash from './page/vetsdash';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Homepg/>} />
+          <Route path='/profile' element={<Profile/>} />
+          <Route path='/login' element={<Loginpg/>} />
+          <Route path='/signup' element={<Signpg/>} />
+          <Route path='/about' element={<Aboutpg/>} />
+          <Route path='/services' element={<Services/>} />
+          <Route path='/contact' element={<Contact/>}/>
+          <Route path='/vetslog' element={<Vetslog/>}/>
+          <Route path='/vetsdash' element={<Vetsdash/>}/>
+        </Routes>
+      </BrowserRouter>
+      
   );
 }
 
